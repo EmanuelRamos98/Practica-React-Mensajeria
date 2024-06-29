@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.conteiner{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+}
+.author{
+    background-color: #202c33;
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+.text{
+    padding: 10px;
+}
+.estado{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5px 0 0;
+}

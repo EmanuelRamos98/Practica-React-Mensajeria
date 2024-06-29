@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.screen{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    height: 920px;
+}
+.mensajes{
+    background-image: url(./asset/fondo.jpg);
+    border: solid 10px black;
+    border-radius: 20px;
+    width: 500px;
+    height: 100%;
+    overflow: hidden;
+}
