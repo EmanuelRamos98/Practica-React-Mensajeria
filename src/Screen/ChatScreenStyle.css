@@ -15,5 +15,9 @@
     border-radius: 20px;
     width: 500px;
     height: 100%;
-    overflow: hidden;
+    position: relative;
+    overflow-y: scroll;
+}
+.mensajes::-webkit-scrollbar{
+    display: none;
 }

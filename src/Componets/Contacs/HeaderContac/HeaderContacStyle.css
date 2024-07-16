@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.header_home{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 20px 0;
+    width: 90%;
+    border-bottom: 0.8px rgba(255, 255, 255, 0.959) solid;
+    background-color: #202c33;
+    color: white;
+}

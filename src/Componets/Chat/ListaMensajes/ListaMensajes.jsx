@@ -1,12 +1,11 @@
 import React from 'react'
 import { Mensaje } from '../Mensajes/Mensaje'
 
-export const ListaMensajes = ({MOOK}) => {
+
+export const ListaMensajes = ({data}) => {
     return (
-        <>
-        {
-            MOOK.map(MOOK=> <Mensaje mensaje={MOOK} key={MOOK.id}/>)
-        }
-        </>
+        <div>
+            {data.map(data=><Mensaje lista={data} key={data.id}/>)}
+        </div>
     )
 }

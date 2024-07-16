@@ -1,44 +1,40 @@
-import React from 'react'
-import { ListaMensajes, MensajeFrom } from '../Componets/Chat'
+import React, { useState } from 'react'
+import { ListaMensajes } from '../Componets/Chat'
 import './ChatScreenStyle.css'
 import { ChatHeaderInfo } from '../Componets/Chat/ChatHeaderInfo/ChatHeaderInfo'
+import { MensajeFrom } from '../Componets/Chat/MensajeForm/MensajeFrom'
+import { MOOK_MENSAJES } from './data'
+import { useParams } from 'react-router-dom'
+
+
 
 
 export const ChatScreen = () => {
-const MOOK_MENSAJES = [
-        {
+    const { contacId } = useParams()
+    const mensaje = MOOK_MENSAJES.find(mensaje => mensaje.id === Number(contacId))
+    const mensajes = mensaje.mensajes
+    
+    const [men, setMensajes] = useState(mensajes)
+    const handleSubmit =(e)=>{
+        e.preventDefault()
+        const mensajeValue={
             author: 'yo',
-            text: 'texto de mensaje',
-            estado: 'visto',
-            day: 'hoy',
-            hour: '13:15',
-            id: '1'
-        },
-        {
-            author: 'Leo',
-            text: 'Hola que tal?',
-            estado: 'visto',
+            text:[],
+            estado: '',
             day: 'hoy',
             hour: '13:16',
-            id: '2'
-        },
-        {
-            author: 'yo',
-            text: 'Sos real? OMG',
-            estado: 'visto',
-            day: 'hoy',
-            hour: '13:17',
-            id: '3'
+            id: '5'
         }
-    ]
-
+        mensajeValue.text.push(e.target.text.value)
+        setMensajes([...men, mensajeValue])
+    }
 
     return (
         <div className='screen'>
             <div className='mensajes'>
                 <ChatHeaderInfo/>
-                <ListaMensajes MOOK={MOOK_MENSAJES}/>
-                <MensajeFrom/>
+                <ListaMensajes data={men}/>
+                <MensajeFrom handleSubmit={handleSubmit}/>
             </div>
         </div>
     )
